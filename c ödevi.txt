@@ -1,0 +1,130 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <time.h>
+#include <string.h>
+
+	struct soruBank {
+		int sno;
+		char cevap[500];
+		char soru[150];
+		char doðruCevap[2];
+		
+	};
+
+	int main(void) {
+		struct soruBank sorular[500] = {
+
+		  {1,"A)* \n B)| \n C)- \n D) _","Aþaðýdaki özel sembollerden hangisine deðiþken adýnda izin verilir?","D"},
+		  {2,"A)Roundup (1.66) \n B)Zemin (1.66) \n C)  ceil (1.66)\n D) roundto (1.66)" , "1.66'dan 2.0'a kadar bir deðeri nasýl yuvarlarsýnýz?","C"},
+		  {3,"A)Tanýmlanmasý \n B) Bildirilmesi \n C) Prototip \n D) Çaðrý","Bir fonksiyonun prototipinden bahsettiðimizde?","B"},
+		  {4,"A)Doðru \n B)Yalnýþ \n C)Tanýmlanamaz \n D)Bazen ","Bir uzun çift bir aralýðý ise kullanýlabilecek çift gerçek sayýsýný karþýlamak için yeterli deðildir.?","A"},
+		  {5,"A)/ + * - \n B)* - / + \n C)+ - / * \n D)/ * + - ", "Aþaðýdakilerden hangisi C'deki aritmetik iþlemlerin hiyerarþisini doðru gösterir?","D"},
+
+
+
+
+		  {6, "A)f1 f2 f3 \n B)f3 f2 f1 \n C)Sipariþ derleyiciden derleyiciye deðiþebilir \n D)Hiçbiri","Aþaðýdaki kodda iþlev görürseniz aþaðýdakilerden hangisi doðru sýrada? a = f1(23, 14) * f2(12 / 4) + f3();",
+		  "C"},
+		  {7, "A)Hiçbiri \n B)sadece a doðru \n C) sadece b doðru \n D)hepsi doðru ", "Aþaðýdaki iki ifade ayný mýdýr  1)a <= 20? (b = 30): (c = 30); 2)(a <= 20) ? b : (c = 30);","A"},
+		  {8, "A)Evet \n B)Hayýr \n C) + daima önceliklidir \n D)genellikle ", "Operatör önceliði ayný olmadýkça iliþkilendirme rol oynamaz.?","A"},
+		  {9, "A)NULL göstericinin gösterimi \n B)Boþluk iþaretçisinin gösterimi \n C)Hata \n D)Yukarýdakilerden hiçbiri " , "(Boþluk *) 0 nedir?","A"},
+		  {10,"A)stdio.h \n B)stddef.h \n C)stdio.h ve stddef.h \n D)math.h " , "NULL makrosu hangi baþlýk dosyasýnda tanýmlanýr?","C"},
+
+
+
+
+		  {11, "A)yakýn = 2 uzak = 4 dev = 4 \n B)yakýn = 4 uzak = 8 büyük = 8 \n C)yakýn = 2 uzak = 4 dev = 8 \n D)yakýn = 4 uzak = 4 büyük = 8 ","Kaç bayt yakýn, uzak ve büyük imleçler tarafýndan doldurulur (DOS)?","A"},
+		  {12, "A).\n B)& \n C)* \n D)-> ","Deðiþken bir yapýya iþaretçi ise, aþaðýdaki iþlenden hangisi yapýnýn veri üyelerine iþaretçi deðiþkeni üzerinden eriþmek için kullanýlýr?","D"},
+		  {13, "A)k bir iþaretçiye bir iþaretçiye bir göstericeye bir göstericiye \n B)k iþaretçisine iþaretçisine iþaretçisine bir iþaretçisine iþaretçisine bir iþaretçidir \n C)k bir char iþaretçisine bir göstericidir\n D)k bir iþaretçi için bir iþaretçi bir iþaretçidir ",
+		  "Aþaðýdaki ifadelerden hangisi aþaðýdaki ifadede kullanýlan k hakkýnda doðrudur ? char**** k;","B"},
+		  {14, "A)Ýnt \n B)Char \n C)Double \n D)float ","6.22 'nin tipi nedir?","D"},
+          {15, "A)Düzenleme sýrasýnda \n B)Baðlama sýrasýnda \n C)Yürütme sýrasýnda \n D)Ön iþleme sýrasýnda","Hangi aþaðýdaki kodu sahne #include <stdio.h> dosya içeriði ile yer deðiþtirir alýr stdio.h","D"},
+		 
+
+
+		
+		
+		  {16, "A)Doðru \n B)Yalnýþ\n C)Bazen\n D)%ifadesi kullanýmý yalnýþtýr","Fprintf() iþlevini format dizgisinde çaðýrýrken dönüþüm belirteci % s , büyük harflerle bir karakter dizesi yazmak için kullanýlabilir.?","B"},
+		  {17, "A)Negatif \n B)Pozitif \n C)Hiçbiri \n D)Her ikiside ","Fseek () iþlev çaðrýsýnda kullanýlan ofset negatif bir sayý olabilir.","A"},
+		  {18, "A)Ýkili \n B)Hiçbiri \n C)Tekli \n D)Her ikiside ","Printf () iþlevinde yapýlan bir çaðrýda, % b biçimindeki belirteç, bir tamsayýnýn ikili eþdeðerini yazdýrmak için kullanýlabilir.?","B"},
+		  {19, "A)1,2 \n B)2,3 \n C)Hepsi\n D)Hiçbiri " , "Hangisi Dosya iþaretçisidir 1-stderr, 2-stdin, 3-stdout ?","A"},
+		  {20, "A)Evet \n B)Hayýr \n C)Kýsmen \n D)sözlüklere aktarýlý ", "Deðiþken argüman listesini çalýþma sýrasýndaki bir iþleve aktarabilir miyiz?","B"},
+
+
+
+
+
+		  {21,"A)Sabit olmalý \n B)Birden fazla sabit olmalý \n C)Deðiþken \n D)Hiçbiri","Deðiþken argüman listesini kabul eden bir fonksiyonda en az bir sabit argüman olmasý gerekli midir?","A"},
+		  {22,"A)conio.h \n B)stdlib.h \n C)stdio.h \n D)dos.h ", "Giriþ / çýkýþ iþlevi prototipleri ve makrolarý hangi baþlýk dosyasýnda tanýmlanýr?","C"},
+		  {23,"A)strnchar () \n B)strChar () \n C)strrchar () \n D)strrchr () ", "C'deki bir dizgede bir karakterin son oluþumunu bulmak için hangi standart kütüphane iþlevini kullanacaksýnýz?","D"},
+		  {24,"A)Yanlýzca int \n B)Hiçbiri \n C)Her ikiside \n D)Yanlýzca float ", "Ýnt veya float'ý bir dizeye dönüþtürmek için herhangi bir iþlev var mý ?","C"},
+		  {25,"A)dosya arabelleðini temizler. \n B)sadece belirtilen akýþý temizler. \n C)giriþ / çýkýþ tamponunu temizler. \n D)tüm akýþlarý ve belirtilen akýþlarý temizler. ", "Fflush () fonksiyonunun amacý nedir ?","D"},
+
+
+
+
+
+		  {26, "A)Evet \n B)Hiçbiri \n C)Yanlýzca printf \n D)print ", "Çýktýyý ekranda görüntülemek için fprintf () öðesi doðru kullaným mýdýr ?","A"},
+		  {27, "A)rastgele bir sayý döndürür. \n B)belirtilen aralýkta rastgele bir sayý üreteci döndürür. \n C)zamana göre rastgele bir deðere sahip bir rasgele sayý üreteci döndürür. \n D)belirli bir tohum deðeri olan rasgele bir sayý döndür. ", "Random random () iþlevi DOS altýnda Turbo C’de ne yapacak ?","C"},
+		  {28, "A)memory.h \n B)stdlib.h \n C)string.h \n D)dos.h ", "Malloc () ve calloc () gibi iþlevleri kullanmak için hangi baþlýk dosyasý dahil edilmelidir ?","B"},
+		  {29, "A)f bir fonksiyon iþaretçisidir. \n B)f basit bir iþaretçi deðiþkeni bildirimidir. \n C)f , int göstergesine dönen bir iþlevdir . \n D)f , iþlev türünün iþaretçi deðiþkenidir. ", "Aþaðýdaki beyan ne anlama geliyor? int* f();","C"},
+		  {30, "A)Öðe 0 olarak ayarlanacaktýr. \n B)Derleyici bir hata bildirir. \n C)Bazý önemli verilerin üzerine yazýldýðýnda program çökebilir. \n D)Dizi büyüklüðü uygun þekilde büyür. ", "Bir C programýnda, alt dizinin boyutunu aþan bir dizi öðesine bir deðer atarsanýz ne olur ?","C"},
+
+
+
+
+
+		  {31, "A)Dizideki öðelerin deðeri \n B)Dizinin ilk elemaný \n C)Dizinin temel adresi \n D)Dizinin son elemanýnýn adresi ", "C'de, bir diziyi bir iþleve argüman olarak iletirseniz, gerçekte ne geçilir?","C"},
+		  {32, "A)Uzun çiftle kullanýlýr  \n B)Uzun çiftle kullanýlmaz \n C)Kýsa çiftle kullanýlýr \n D)Hiçbiri ", "Modulus operatörü, uzun bir çiftle kullanýlamaz .?","A"},
+		  {33, "A)ifade doðrudur \n B)Hiçbir ifade doðru deðildir \n C)kýsa 8 bits uzun 32 bittir \n D)uzun 16 bittir kýsa 8 bittir ","Bir kýsa tam sayý , en azýndan 16 bit geniþliðinde ve uzun tamsayý en az 32 bit geniþliðinde midir ?","A"},
+		  {34, "A)* \n B)/ \n C)&& \n D)& ", "Aþaðýdakilerden hangisi mantýksal operatör deðil ?","D"},
+		  {35, "A)Karakter \n B)Tamsayý \n C)Þamandýra \n D)Enum ", "Switch-case ifadesinde aþaðýdakilerden hangisi kontrol edilemez ?","C"},
+
+
+
+
+
+		  {36, "A)%f \n B)%d \n C)%c \n D)&d " , "Aþaðýdakilerden hangisi int iafdesini programa okutmak için kullanýlýr?","B"},
+		  {37, "A)Saklayabiliriz \n B)RAM'de saklanýr \n C)Bazý durumlarda \n D)Unicode char deðiþkenini tanýmaz ", "Bir char deðiþkeni, bir ASCII karakterini veya bir Unicode karakterini saklayabilir.","A"},
+		  {38, "A)Hiçbiri \n B)Düðüm \n C)Anahtar \n D)Method ", "Bir deðerin 2 ila 4 veya 5 ila 7 aralýðýnda olup olmadýðýný test etmek istiyoruz. Bunu nasýl  yapabiliriz ?","C"},
+		  {39, "A)Matlab \n B)C  \n C)PHP \n D)CSS " , "Mühendislik alanýnda yaygýn kullanýlan yazýlým?","A"},
+		  {40, "A)<<countes>> \n B)void(main)\n C)printf \n D)scanf_s ","C programlada  visual studio derleyicisinde iafdeleri tanýmlayýcý ifade aþaðýdakilerden hangisidir?","D"},
+
+
+		};
+
+		int toplamPuan=0 ;
+		int puan=0;
+		int kaçsoru;
+		printf("kaç soru cevaplamak istersiniz?:");
+		scanf("%d", &kaçsoru);
+		for (int i = 0; i < kaçsoru; i++) {
+			char verilenCevap[2];
+			srand(time(NULL));
+			int indis = rand() % 39 + 1;
+			printf("Rastgele üretilen soru:\n%d\n%s\n%s\n", sorular[indis].sno,sorular[indis].soru, sorular[indis].cevap );
+			printf("Verilen cevap : ");
+			scanf("%2s", &verilenCevap);
+			printf("");
+			int sonuç;
+			
+			sonuç = strcmp(sorular[indis].doðruCevap,verilenCevap);
+			
+			puan = 100 / kaçsoru;
+			
+			if (sonuç == 0) {
+
+
+				toplamPuan = toplamPuan + puan;
+				printf("Puanýnýz %d\n", toplamPuan);
+
+			}
+			else
+				printf("yanlýþ cevap\n");
+		}	
+		return -1;
+
+	}
+
+	
